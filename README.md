@@ -1,52 +1,159 @@
-# Adopet Cypress Tests
+# 🐾 Adopet - Testes E2E com Cypress
 
-Projeto em desenvolvimento para estudos de automação de testes end-to-end com Cypress, baseado na aplicação Adopet durante o curso de Cypress da Alura.
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow) ![Cypress](https://img.shields.io/badge/cypress-%3E%3D13.0.0-brightgreen) ![Node.js](https://img.shields.io/badge/node.js-%3E%3D18.0.0-green)
 
-## Objetivo
+Projeto de **automação de testes end-to-end (E2E)** com Cypress para a aplicação **Adopet**, desenvolvido durante o curso de Cypress da Alura. Este projeto valida funcionalidades críticas como autenticação, cadastro de usuários e navegação na plataforma.
 
-Praticar a criação de testes automatizados E2E, validando funcionalidades da aplicação Adopet, como navegação, cadastro, login e interações com elementos da interface.
+## 📋 Sobre o Projeto
 
-## Tecnologias utilizadas
+- **Objetivo**: Praticar boas práticas de automação de testes E2E com Cypress
+- **Aplicação testada**: [Adopet Frontend](https://adopet-frontend-cypress.vercel.app/)
+- **Status**: 🚧 Em desenvolvimento - novos testes sendo adicionados
+- **Relatórios**: Gerados automaticamente com Mochawesome
 
-- Cypress
-- JavaScript
-- Node.js
-- npm
-- Git e GitHub
-- Visual Studio Code
+## 🛠️ Tecnologias
 
-## Pré-requisitos
+| Tecnologia | Versão |
+|-----------|--------|
+| **Cypress** | ^13.0.0 |
+| **Node.js** | ≥18.0.0 |
+| **JavaScript** | ES6+ |
+| **Mochawesome** | ^7.1.4 |
 
-Antes de executar o projeto, é necessário ter instalado na máquina:
+## 📦 Pré-requisitos
 
-- Node.js
-- npm
-- Git
+Antes de executar o projeto, você precisa ter instalado:
 
-Para verificar se o Node.js e o npm estão instalados, use:
+- **Node.js** ≥ 18.0.0
+- **npm** (vem com Node.js)
+- **Git** (opcional, apenas para clonar o repositório)
 
-```bash
-node -v
-npm -v
-```
-
-Caso não estejam instalados, baixe e instale o Node.js pelo site oficial:
-
-```txt
-https://nodejs.org/
-```
-
-## Estrutura do projeto
+### Verificar instalação
 
 ```bash
-cypress/
-  e2e/
-    cadastro-correto.cy.js
-  fixtures/
-    example.json
-  support/
-    commands.js
-    e2e.js
+node --version
+npm --version
+```
+
+### Instalar Node.js
+
+Caso não tenha instalado, baixe em: https://nodejs.org/
+
+## 🚀 Como Configurar e Executar
+
+### 1. Clonar o repositório
+
+```bash
+git clone <seu-repositorio>
+cd curso_cypress
+```
+
+### 2. Instalar dependências
+
+```bash
+npm install
+```
+
+### 3. Executar os testes
+
+```bash
+# Executar todos os testes
+npm run cypress:run
+
+# Executar com interface gráfica (modo interativo)
+npx cypress open
+
+# Executar um arquivo específico
+npx cypress run --spec "cypress/e2e/login-correto.cy.js"
+```
+
+## 📁 Estrutura do Projeto
+
+```
+curso_cypress/
+├── cypress/
+│   ├── e2e/                          # Testes E2E
+│   │   ├── cadastro-correto.cy.js       # ✅ Cadastro com dados válidos
+│   │   ├── cadastro-incorreto.cy.js     # ❌ Cadastro com dados inválidos
+│   │   └── login-correto.cy.js          # ✅ Login com credenciais válidas
+│   │
+│   ├── fixtures/                     # Dados de teste
+│   │   └── example.json
+│   │
+│   ├── support/                      # Configurações e helpers
+│   │   ├── commands.js               # Comandos customizados
+│   │   └── e2e.js                    # Configurações globais
+│   │
+│   ├── reports/                      # Relatórios gerados
+│   │   └── mochawesome_*.html
+│   │
+│   ├── screenshots/                  # Screenshots de falhas
+│   └── videos/                       # Gravações dos testes
+│
+├── cypress.config.js                 # Configuração do Cypress
+├── package.json                      # Dependências do projeto
+└── README.md                         # Este arquivo
+```
+
+## ✅ Testes Implementados
+
+### 1. **Cadastro Correto** (`cadastro-correto.cy.js`)
+- ✅ Cadastro com dados válidos
+- Valida preenchimento correto de formulário
+- Confirma sucesso no registro
+
+### 2. **Cadastro Incorreto** (`cadastro-incorreto.cy.js`)
+- ❌ Submissão de formulário vazio
+- Valida exibição de mensagens de erro
+- Testa validação de campos obrigatórios
+
+### 3. **Login Correto** (`login-correto.cy.js`)
+- ✅ Autenticação com credenciais válidas
+- Valida fluxo de login
+- Testa redirecionamento após autenticação
+
+## 📊 Relatórios
+
+Os testes geram automaticamente relatórios em HTML com o **Mochawesome**:
+
+```
+cypress/reports/mochawesome_DDMMAAAA_HHMMSS.html
+```
+
+Abra o arquivo HTML no navegador para visualizar os resultados detalhados.
+
+## 📝 Próximos Passos
+
+- [ ] Testes para listagem de pets
+- [ ] Testes para perfil de usuário
+- [ ] Testes de busca e filtros
+- [ ] Testes de responsividade
+- [ ] Testes de performance
+- [ ] Implementar Page Objects Model (POM)
+- [ ] Adicionar suporte a dados dinâmicos com fixtures
+
+## 🔧 Configurações do Cypress
+
+O arquivo `cypress.config.js` contém:
+
+- **Reporter**: Mochawesome para gerar relatórios HTML
+- **Vídeos**: Habilitados (gravação de cada teste)
+- **Screenshots**: Automáticos em caso de falha
+- **Timestamps**: Nos relatórios para rastreabilidade
+
+## 📚 Referências
+
+- [Documentação Cypress](https://docs.cypress.io/)
+- [Alura - Curso de Cypress](https://www.alura.com.br/)
+- [Adopet - Aplicação](https://adopet-frontend-cypress.vercel.app/)
+
+## 📄 Licença
+
+ISC
+
+---
+
+**Desenvolvido com ❤️ para aprender automação de testes**
 
 cypress.config.js
 package.json

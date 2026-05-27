@@ -7,7 +7,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:run": "npx cypress run --reporter mochawesome",
+    "cypress:open": "npx cypress open",
+    "test": "npm run cypress:run"
   },
   "devDependencies": {
     "mochawesome": "^7.1.4"
