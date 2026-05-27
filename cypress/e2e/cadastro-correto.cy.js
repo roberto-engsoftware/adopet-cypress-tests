@@ -1,12 +1,12 @@
-describe('template spec', () => {
-  it('passes', () => {
+describe('Pagina de cadastro', () => {
+  it('Deve cadastrar um novo usuario com sucesso', () => {
     cy.visit('https://adopet-frontend-cypress.vercel.app/');
-    cy.contains('a', 'Cadastrar').click();
-    cy.get('input[name = "nome"]').type('Joao Lucas');
-    cy.get('input[name = "email"]').type('joao.lucas@example.com');
-    cy.get('input[name = "password"]').type('Senha123');
-    cy.get('input[name = "confirm_password"]').type('Senha123');
-    cy.contains('button', 'Cadastrar').click();
+    cy.get('[data-test="register-button"]').click();
+    cy.get('[data-test="input-name"]').type('Joao Lucas');
+    cy.get('[data-test="input-email"]').type('joao.lucas@example.com');
+    cy.get('[data-test="input-password"]').type('Senha123');
+    cy.get('[data-test="input-confirm-password"]').type('Senha123');
+    cy.get('[data-test="submit-button"]').click();
 
-  })
+  }) 
 })
