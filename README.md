@@ -44,8 +44,7 @@ Caso não tenha instalado, baixe em: https://nodejs.org/
 ### 1. Clonar o repositório
 
 ```bash
-git clone <seu-repositorio>
-cd curso_cypress
+git clone git@github.com:roberto-engsoftware/adopet-cypress-tests.git
 ```
 
 ### 2. Instalar dependências
